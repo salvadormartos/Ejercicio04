@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    MyOutlinedTextField()
                 }
             }
         }
@@ -31,26 +31,8 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(
-    name = "P1",
-    showBackground = true,
-    fontScale = 1.1f,
-    showSystemUi = true,
-    apiLevel = 29,
-    device = Devices.NEXUS_6,
-    //backgroundColor = 10000000,
-    //uiMode = UI_MODE_NIGHT_YES
-)
-@Composable
 fun GreetingPreview() {
     Ejercicio04Theme {
-        Greeting("Android")
+        MyOutlinedTextField()
     }
 }
