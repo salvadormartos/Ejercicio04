@@ -23,16 +23,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MyOutlinedTextField()
+                    TextButtonExample()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun GreetingPreview() {
-    Ejercicio04Theme {
-        MyOutlinedTextField()
     }
 }

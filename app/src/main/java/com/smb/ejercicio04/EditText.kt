@@ -20,7 +20,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyTextField() {
@@ -29,11 +28,12 @@ fun MyTextField() {
         Modifier
             .fillMaxWidth()
             .padding(20.dp)
-    ){
+    ) {
         TextField(value = name, onValueChange = { name = it })
     }
 
 }
+
 
 @Preview(
     name = "P1",
@@ -47,6 +47,28 @@ fun MyTextField() {
 )
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+fun LabelAndPlaceholderExample() {
+    var address by remember {
+        mutableStateOf("")
+    }
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .padding(20.dp)
+    ) {
+        OutlinedTextField(value = address, onValueChange = {
+            address = if (it.contains("a")) {
+                it.replace("a", "")
+            } else {
+                it
+            }
+        }, label = { Text("Dirección") }, placeholder = { Text(text = "¿Donde vives?") })
+    }
+}
+
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
 fun MyOutlinedTextField() {
     var name by rememberSaveable { mutableStateOf("Hola Mundo") }
     Row(
@@ -57,5 +79,6 @@ fun MyOutlinedTextField() {
         OutlinedTextField(value = name, onValueChange = { name = it }, label = { Text("Nombre") })
     }
 }
+
 
 
